@@ -2,29 +2,40 @@
 // Created by hg on 3/22/23.
 //
 
-#include "Player.h"
+#include "Base.h"
 #include "Observer.h"
 #include <algorithm>
-Player::Player()
+Base::Base()
 {
     obsVec_ = make_shared<vector<shared_ptr<Observer>>>();
 }
 
-void Player::attach(Observer *o) {
-    obsVec_->emplace_back(o);
+void Base::attach(Observer *o) {
+    shared_ptr<Observer> ptr(o);
+    obsVec_->emplace_back(ptr);
 }
 
-void Player::detach(Observer *o) {
-    obsVec_->erase(find(obsVec_->begin(), obsVec_->end(), o));
+void Base::detach(Observer *o) {
+    for(auto it = obsVec_->begin(); it != obsVec_->end();)
+    {
+        if(it->get() == o)
+        {
+            it = obsVec_->erase(it);
+        }
+        else
+        {
+            ++it;
+        }
+    }
 }
 
-void Player::change(std::string newState) {
+void Base::change(std::string newState) {
     setState(newState);
-    cout << "state is: " << newState << endl;
+    cout << "Base state change to: " << newState << endl;
     notifyAll();
 }
 
-void Player::notifyAll() {
+void Base::notifyAll() {
     cout << "notify all observers" << endl;
     for(auto item : *obsVec_)
     {
@@ -32,10 +43,10 @@ void Player::notifyAll() {
     }
 }
 
-void Player::setState(const string &newState) {
+void Base::setState(const string &newState) {
     state_ = newState;
 }
 
-const std::string Player::getState() const {
+const std::string Base::getState() const {
     return state_;
 }
