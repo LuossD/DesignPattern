@@ -2,8 +2,8 @@
 // Created by hg on 3/22/23.
 //
 
-#include "Base.h"
-#include "Observer.h"
+#include "Observer/Base.h"
+#include "Observer/Observer.h"
 #include <algorithm>
 Base::Base()
 {

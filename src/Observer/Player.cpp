@@ -2,8 +2,8 @@
 // Created by hg on 3/22/23.
 //
 
-#include "Player.h"
-#include "Subject.h"
+#include "Observer/Player.h"
+#include "Observer/Subject.h"
 Player::Player(std::string name, std::string state) : name_(name), state_(state)
 {
 

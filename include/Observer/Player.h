@@ -5,7 +5,7 @@
 #ifndef DP_PLAYER_H
 #define DP_PLAYER_H
 #include <iostream>
-#include "Observer.h"
+#include "Observer/Observer.h"
 class Player : public Observer
 {
 public:

@@ -1,10 +1,10 @@
 //
 // Created by hg on 3/22/23.
 //
-#include "Observer.h"
-#include "Subject.h"
-#include "Player.h"
-#include "Base.h"
+#include "Observer/Observer.h"
+#include "Observer/Subject.h"
+#include "Observer/Player.h"
+#include "Observer/Base.h"
 int main()
 {
     Observer* player1 = new Player("A","无警戒状态");
