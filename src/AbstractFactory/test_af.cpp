@@ -8,14 +8,22 @@ int main()
 {
     SkinFactory* skinFactory = new SpringSkinFactory();
 
-    skinFactory->createButton()->click();
-    skinFactory->createText()->display();
-    skinFactory->createComboBox()->select();
+    Button* bt = skinFactory->createButton();
+    Text* tx = skinFactory->createText();
+    ComboBox* cb = skinFactory->createComboBox();
+    bt->click();
+    tx->display();
+    cb->select();
 
+    delete cb;
+    delete skinFactory;
     skinFactory = new SummerSkinFactory();
-    skinFactory->createComboBox()->select();
-//    Logger* logger = factory->createLogger();
-//    logger->log();
+    cb = skinFactory->createComboBox();
+    cb->select();
 
+    delete skinFactory;
+    delete bt;
+    delete tx;
+    delete cb;
     return 0;
 }

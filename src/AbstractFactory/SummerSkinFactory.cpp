@@ -9,9 +9,9 @@ Button *SummerSkinFactory::createButton() {
 }
 
 Text *SummerSkinFactory::createText() {
-    return new SummerText;
+    return new SummerText();
 }
 
 ComboBox *SummerSkinFactory::createComboBox() {
-    return new SummerComboBox;
+    return new SummerComboBox();
 }

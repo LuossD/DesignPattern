@@ -14,6 +14,7 @@ public:
     virtual Button* createButton() = 0;
     virtual Text* createText() = 0;
     virtual ComboBox* createComboBox() = 0;
+    virtual ~SkinFactory() = default;
 };
 
 #endif //DP_SKINFACTORY_H

@@ -9,6 +9,7 @@ class Button
 {
 public:
     virtual void click() = 0;
+    virtual ~Button() = default;
 };
 
 #endif //DP_BUTTON_H

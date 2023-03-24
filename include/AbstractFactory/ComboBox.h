@@ -9,5 +9,6 @@ class ComboBox
 {
 public:
     virtual void select() = 0;
+    virtual ~ComboBox() = default;
 };
 #endif //DP_COMBOBOX_H

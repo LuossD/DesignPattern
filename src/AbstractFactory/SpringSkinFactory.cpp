@@ -9,9 +9,9 @@ Button *SpringSkinFactory::createButton() {
 }
 
 Text *SpringSkinFactory::createText() {
-    return new SpringText;
+    return new SpringText();
 }
 
 ComboBox *SpringSkinFactory::createComboBox() {
-    return new SpringComboBox;
+    return new SpringComboBox();
 }

@@ -9,6 +9,7 @@ class Text
 {
 public:
     virtual void display() = 0;
+    virtual ~Text() = default;
 };
 
 #endif //DP_TEXT_H
